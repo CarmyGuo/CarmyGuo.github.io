@@ -8,7 +8,7 @@ import pymssql
 
 def fetch_option_info_from_sql(udl_code):
     """获取期权信息"""
-    db = pymssql.connect("192.168.53.147", "sa", "123456", "OptionData", charset="cp936")
+    db = pymssql.connect("填入ip", "sa", "123456", "OptionData", charset="cp936")
     sql = "SELECT * FROM [OptionData].[dbo].[Option_Info] WHERE [OptionMarkCode] = '%s' " % (udl_code)
     cursor = db.cursor()
     cursor.execute(sql)
