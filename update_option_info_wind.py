@@ -43,7 +43,7 @@ option_to_be_inserted.drop(['wind_code', 'trade_code', 'option_mark_code', 'opti
                             'settlement_date', 'reference_price', 'settle_mode', 'contract_state'],
                            axis=1, inplace=True)
 
-engine = create_engine("mssql+pymssql://sa:123456@192.168.53.147/%s" % "OptionData")
+engine = create_engine("mssql+pymssql://sa:123456@ip地址/%s" % "OptionData")
 conn_insert = engine.connect()
 option_to_be_inserted.to_sql("Option_Info", conn_insert, if_exists="append", index=False,
                              dtype={"SecName": sqlalchemy.types.VARCHAR(),
